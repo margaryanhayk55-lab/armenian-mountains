@@ -1,0 +1,52 @@
+.mountains { background: #121212; padding: 100px 20px; overflow: hidden; }
+
+.mountains-head { max-width: 800px; margin: 0 auto 60px; text-align: center; }
+.mountains-head h2 { font-size: 38px; font-weight: 700; margin-bottom: 15px; line-height: 1.3; }
+.mountains-head p { color: var(--muted); font-size: 18px; }
+
+.mountains-grid {
+  max-width: 1200px; margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.mountain-card {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  background: var(--card);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .5);
+  opacity: 0;
+  transition: transform 1s cubic-bezier(.16, 1, .3, 1), opacity .8s, border-color .3s;
+}
+.from-left  { transform: translateX(-100px); }
+.from-right { transform: translateX(100px); }
+.mountain-card.visible { opacity: 1; transform: translateX(0); }
+.mountain-card:hover { border-color: rgba(229, 115, 66, .6); }
+
+.mountain-img-wrap { height: 220px; overflow: hidden; }
+.mountain-img {
+  height: 100%;
+  background-size: cover; background-position: center;
+  transition: transform .6s;
+}
+.mountain-card:hover .mountain-img { transform: scale(1.08); }
+
+.mountain-body { padding: 24px; }
+.mountain-badge {
+  display: inline-block;
+  font-size: 12px; font-weight: 700; color: var(--orange);
+  background: rgba(229, 115, 66, .1);
+  padding: 4px 10px; border-radius: 20px; margin-bottom: 12px;
+}
+.mountain-body h3 { font-size: 22px; margin-bottom: 8px; }
+.mountain-body p { color: #999; font-size: 14px; line-height: 1.7; }
+.mountain-more { display: inline-block; margin-top: 16px; color: var(--orange); font-size: 14px; font-weight: 700; }
+
+@media (max-width: 650px) {
+  .mountains-head h2 { font-size: 28px; }
+}

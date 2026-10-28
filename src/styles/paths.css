@@ -1,0 +1,133 @@
+.paths-page { overflow: hidden; background: #101713; }
+.paths-kicker { display: inline-block; color: #e4a16e; font-size: 11px; font-weight: 800; letter-spacing: 2.2px; }
+
+/* ---------- Верхний блок ---------- */
+.paths-intro {
+  position: relative; isolation: isolate; overflow: hidden;
+  display: flex; align-items: center;
+  min-height: 460px; padding: 140px 8% 80px;
+}
+.paths-intro-image {
+  position: absolute; z-index: -2; inset: 0;
+  background: url('https://dtuk-aws-s3-explore-prod.s3.eu-west-1.amazonaws.com/medialibraries/explore/explore-media/destinations/asia/armenia/armenia-new-header.jpg?ext=.jpg&width=1920&format=webp&quality=80&v=201808220929%201920w') center 40% / cover;
+}
+.paths-intro::before {
+  content: ''; position: absolute; z-index: -1; inset: 0;
+  background:
+    linear-gradient(90deg, rgba(9,18,14,.94) 0%, rgba(9,18,14,.72) 50%, rgba(9,18,14,.2) 100%),
+    linear-gradient(0deg, #101713 0%, transparent 38%);
+}
+.paths-intro-content { width: min(700px, 100%); }
+.paths-intro-content h1 { margin: 18px 0 18px; font-size: clamp(38px, 6vw, 68px); line-height: 1.12; letter-spacing: -1.2px; }
+.paths-intro-content p { max-width: 560px; color: #d0d8d2; font-size: 16px; line-height: 1.9; }
+
+/* ---------- Основная часть ---------- */
+.paths-content { max-width: 1420px; margin: 0 auto; padding: 50px 6% 110px; }
+
+.paths-toolbar {
+  display: flex; justify-content: space-between; align-items: center; gap: 22px;
+  padding: 18px; border: 1px solid rgba(255,255,255,.1); border-radius: 18px; background: #151e18;
+}
+.paths-search {
+  flex: 1; min-width: 220px; max-width: 430px;
+  display: flex; align-items: center; gap: 12px; padding: 0 14px;
+  border: 1px solid rgba(255,255,255,.12); border-radius: 10px;
+  background: #101713; color: #d9a17c;
+}
+.paths-search > span { font-size: 24px; line-height: 1; }
+.paths-search input {
+  width: 100%; min-width: 0; padding: 13px 0; border: 0; outline: none;
+  background: transparent; color: #fff; font-family: inherit; font-size: 13px;
+}
+.paths-search input::placeholder { color: #7f8b82; }
+.paths-search button { border: 0; background: transparent; color: #b9c3bb; font-size: 22px; cursor: pointer; }
+
+.paths-filters { display: flex; flex-wrap: wrap; gap: 7px; }
+.paths-filter {
+  min-height: 40px; padding: 10px 18px;
+  border: 1px solid rgba(255,255,255,.12); border-radius: 9px;
+  background: transparent; color: #aebbb1;
+  font-family: inherit; font-size: 13px; font-weight: 600; line-height: 1.2;
+  white-space: nowrap; cursor: pointer;
+  transition: color .2s, background-color .2s, border-color .2s;
+}
+.paths-filter:hover { color: #fff; border-color: rgba(226,160,109,.6); }
+.paths-filter.active { background: #e2a06d; border-color: #e2a06d; color: #172019; }
+.paths-filter:focus-visible { outline: 2px solid #e2a06d; outline-offset: 3px; }
+
+.paths-meta { margin: 24px 2px 18px; color: #819087; font-size: 12px; }
+.paths-meta b { color: #e4a16e; }
+
+/* ---------- Карточки (такие же, как на главной) ---------- */
+.paths-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+
+.path-card {
+  position: relative; isolation: isolate; overflow: hidden;
+  display: block; height: 440px; border-radius: 15px;
+  background: #1b251e; color: #fff; text-decoration: none;
+}
+.path-card::before {
+  content: ''; position: absolute; inset: 0; z-index: -1;
+  background: var(--photo) center / cover;
+  transition: transform .8s;
+}
+.path-card:hover::before { transform: scale(1.09); }
+.path-card::after {
+  content: ''; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(180deg, rgba(0,0,0,.03) 20%, rgba(0,0,0,.2) 43%, rgba(0,0,0,.88) 100%);
+}
+.path-card-number {
+  position: absolute; top: 22px; left: 22px; font-size: 12px;
+  padding: 9px 13px; border: 1px solid rgba(255,255,255,.55);
+  border-radius: 30px; backdrop-filter: blur(8px);
+}
+.path-level {
+  position: absolute; top: 22px; left: 22px;
+  padding: 7px 11px; border-radius: 30px; color: #fff; font-size: 10px; font-weight: 800;
+}
+.path-level.easy { background: #377b5a; }
+.path-level.medium { background: #bd7b36; }
+.path-level.hard { background: #a84943; }
+
+.path-card-body { position: absolute; left: 27px; right: 24px; bottom: 27px; }
+.path-card-region { display: block; margin-bottom: 8px; color: #f0b58e; font-size: 12px; font-weight: 700; }
+.path-card h3 { margin-bottom: 16px; font-size: 28px; line-height: 1.3; }
+.path-card-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.path-card-chips span {
+  padding: 6px 12px; border: 1px solid rgba(255,255,255,.35);
+  border-radius: 20px; background: rgba(0,0,0,.25);
+  backdrop-filter: blur(6px); color: rgba(255,255,255,.9); font-size: 11px;
+}
+.path-card-link { display: flex; align-items: center; gap: 12px; margin-top: 20px; font-size: 13px; font-weight: 700; }
+.path-card-link span {
+  display: flex; justify-content: center; align-items: center;
+  width: 31px; height: 31px; border: 1px solid rgba(255,255,255,.7);
+  border-radius: 50%; transition: .3s;
+}
+.path-card:hover .path-card-link span { background: #c76b42; border-color: #c76b42; transform: rotate(45deg); }
+
+/* ---------- Пусто ---------- */
+.paths-empty {
+  padding: 70px 20px; text-align: center;
+  border: 1px dashed rgba(255,255,255,.15); border-radius: 16px; color: #aebbb1;
+}
+.paths-empty h3 { margin-bottom: 10px; color: #fff; font-size: 23px; }
+.paths-empty p { font-size: 14px; }
+.paths-empty button {
+  margin-top: 20px; padding: 10px 18px; border: 1px solid #e4a16e; border-radius: 25px;
+  background: transparent; color: #e4a16e; font-family: inherit; cursor: pointer;
+}
+
+/* ---------- Адаптив ---------- */
+@media (max-width: 1050px) {
+  .paths-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .paths-toolbar { flex-direction: column; align-items: stretch; }
+  .paths-search { max-width: none; }
+}
+@media (max-width: 650px) {
+  .paths-intro { min-height: 400px; padding: 120px 6% 60px; }
+  .paths-content { padding: 36px 5% 80px; }
+  .paths-filters { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .paths-grid { grid-template-columns: 1fr; gap: 18px; }
+  .path-card { height: 400px; }
+}

@@ -1,0 +1,180 @@
+/* ---------- Страницы гор: большая картинка сверху ---------- */
+.mp-hero {
+  position: relative;
+  min-height: 65vh;
+  display: flex; align-items: flex-end;
+  padding: 140px 6% 60px;
+  background-size: cover; background-position: center;
+}
+.mp-hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to top, #101311 0%, rgba(16, 19, 17, .35) 60%, rgba(16, 19, 17, .55) 100%);
+}
+.mp-hero-content { position: relative; max-width: 800px; }
+
+.mp-back {
+  display: inline-block; margin-bottom: 20px;
+  color: #d0d4cf; font-size: 14px; text-decoration: none; transition: color .3s;
+}
+.mp-back:hover { color: var(--orange); }
+
+.mp-hero h1 { font-size: clamp(40px, 7vw, 76px); font-weight: 800; line-height: 1.1; margin-bottom: 14px; }
+.mp-hero p { color: #d0d4cf; font-size: 18px; line-height: 1.8; }
+
+/* ---------- Общая часть (горы и места) ---------- */
+.mp-body { max-width: 1200px; margin: 0 auto; padding: 20px 6% 90px; }
+
+.mp-info {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px; margin-bottom: 60px;
+}
+.mp-info > div {
+  padding: 22px;
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, .08);
+  border-radius: 14px;
+}
+.mp-info small { display: block; color: #7d827c; font-size: 12px; margin-bottom: 6px; }
+.mp-info b { font-size: 17px; font-weight: 700; }
+
+.mp-columns { display: grid; grid-template-columns: 1.6fr 1fr; gap: 50px; align-items: start; }
+.mp-text h2 { font-size: 30px; margin-bottom: 20px; }
+.mp-text p { color: #c9cdc8; font-size: 16px; line-height: 2; margin-bottom: 18px; }
+
+.mp-facts {
+  padding: 28px;
+  background: var(--card);
+  border: 1px solid rgba(229, 115, 66, .3);
+  border-radius: 16px;
+}
+.mp-facts h3 { font-size: 20px; margin-bottom: 18px; color: var(--orange); }
+.mp-facts ul { list-style: none; }
+.mp-facts li {
+  position: relative; padding: 10px 0 10px 24px;
+  color: #c9cdc8; font-size: 14px; line-height: 1.7;
+  border-bottom: 1px solid rgba(255, 255, 255, .06);
+}
+.mp-facts li:last-child { border-bottom: none; }
+.mp-facts li::before { content: '✦'; position: absolute; left: 0; top: 10px; color: var(--orange); font-size: 12px; }
+
+.mp-hikes { margin-top: 70px; }
+.mp-hikes h2 { font-size: 26px; margin-bottom: 20px; }
+.mp-hike {
+  display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+  padding: 18px 22px; margin-bottom: 12px;
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, .08);
+  border-radius: 12px;
+  color: #fff; text-decoration: none; transition: border-color .3s;
+}
+.mp-hike:hover { border-color: var(--orange); }
+.mp-hike span:last-child { color: var(--orange); font-size: 14px; }
+
+.mp-nav {
+  display: flex; justify-content: space-between; gap: 20px;
+  margin-top: 70px; padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, .1);
+}
+.mp-nav a { color: #d0d4cf; font-size: 16px; text-decoration: none; transition: color .3s; }
+.mp-nav a:hover { color: var(--orange); }
+
+/* ---------- Страницы мест (Гарни, Гегард...): текст + слайдер ---------- */
+.pl-hero {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 60px;
+  align-items: center;
+  max-width: 1350px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 130px 6% 60px;
+  background: radial-gradient(circle at 85% 20%, rgba(229, 115, 66, .12), transparent 55%);
+}
+
+.pl-tag {
+  display: inline-block;
+  margin-bottom: 16px;
+  margin-left: 16px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  background: rgba(229, 115, 66, .15);
+  color: var(--orange);
+  font-size: 13px;
+  font-weight: 700;
+}
+.pl-hero-text h1 {
+  font-size: clamp(36px, 5vw, 62px);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+.pl-hero-text p { color: #c9cdc8; font-size: 18px; line-height: 1.9; }
+
+.pl-main {
+  position: relative;
+  height: 520px;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #222;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, .55);
+}
+.pl-slide {
+  position: absolute; inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.06);
+  transition: opacity 1s ease, transform 6s ease-out;
+}
+.pl-slide.active { opacity: 1; transform: scale(1); }
+
+.pl-arrow {
+  position: absolute; top: 50%;
+  width: 48px; height: 48px;
+  margin-top: -24px;
+  border: 1px solid rgba(255, 255, 255, .4);
+  border-radius: 50%;
+  background: rgba(16, 19, 17, .55);
+  backdrop-filter: blur(6px);
+  color: #fff; font-size: 20px;
+  cursor: pointer; transition: .3s;
+  z-index: 2;
+}
+.pl-arrow:hover { background: var(--orange); border-color: var(--orange); }
+.pl-arrow.left { left: 18px; }
+.pl-arrow.right { right: 18px; }
+
+.pl-count {
+  position: absolute; bottom: 18px; right: 18px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: rgba(16, 19, 17, .6);
+  backdrop-filter: blur(6px);
+  font-size: 13px; font-weight: 700;
+  z-index: 2;
+}
+
+.pl-thumbs { display: flex; gap: 14px; margin-top: 16px; }
+.pl-thumb {
+  flex: 1;
+  height: 84px;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center;
+  opacity: .55;
+  cursor: pointer;
+  transition: .3s;
+}
+.pl-thumb:hover { opacity: .9; }
+.pl-thumb.active { opacity: 1; border-color: var(--orange); }
+
+.pl-hero + .mp-body { padding-top: 40px; }
+
+/* ---------- Адаптив ---------- */
+@media (max-width: 900px) {
+  .mp-columns { grid-template-columns: 1fr; gap: 30px; }
+  .pl-hero { grid-template-columns: 1fr; gap: 36px; min-height: auto; padding-top: 110px; }
+  .pl-main { height: 340px; }
+  .pl-thumb { height: 64px; }
+}

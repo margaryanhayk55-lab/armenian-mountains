@@ -1,0 +1,29 @@
+
+.footer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #080d12;
+  line-height: 0;
+  max-height: 430px;
+} 
+
+.footer__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Мобильные устройства */
+@media (max-width: 768px) {
+  .footer__image {
+    width: 100%;
+    min-height: 180px;
+    object-fit: cover;
+    object-position: center;
+  }
+}

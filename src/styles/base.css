@@ -1,0 +1,73 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --orange: #e57342;
+  --orange-dark: #c75322;
+  --bg: #101311;
+  --card: #1a1a1a;
+  --muted: #a0a0a0;
+  --font-text: 'Noto Sans Armenian', sans-serif;
+  --font-title: 'Noto Serif Armenian', serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-text);
+  background: var(--bg);
+  color: #fff;
+  line-height: 1.6;
+}
+
+h1, h2, h3 { font-family: var(--font-title); }
+
+section, footer { scroll-margin-top: 70px; }
+
+/* Общий каркас для внутренних страниц (About, Hikes) */
+.page { min-height: 100vh; padding: 140px 6% 90px; }
+.page-inner { max-width: 1200px; margin: 0 auto; }
+
+.eyebrow-light {
+  display: block;
+  color: var(--orange);
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+.page-title {
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+.page-subtitle {
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.8;
+  max-width: 650px;
+}
+
+/* Кнопки */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #e57342, #c75322);
+  color: #fff;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(229, 115, 66, 0.35);
+  transition: transform .3s, box-shadow .3s;
+}
+.btn:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(229, 115, 66, 0.55); }
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: none;
+}
+.btn-ghost:hover { background: rgba(255, 255, 255, 0.12); box-shadow: none; }
